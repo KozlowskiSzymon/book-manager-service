@@ -1,0 +1,2 @@
+INSERT INTO Book (id, title, author, description, genre, available, price)
+    VALUES(1,'Diuna. Kroniki Diuny','Frank Herbert','Arrakis, zwana Diuną, to jedyne we wszechświecie źródło melanżu. Z rozkazu Padyszacha Imperatora planetę przejmują Atrydzi, zaciekli wrogowie władających nią dotychczas Harkonnenów. Zwycięstwo księcia Leto Atrydy jest jednak pozorne – przejęcie planety ukartowano. W odpowiedzi na atak Imperium i Harkonnenów dziedzic rodu Atrydów Paul staje na czele rdzennych mieszkańców Diuny i sięga po imperialny tron.','Fantastyka',TRUE,'41,77 zł');
