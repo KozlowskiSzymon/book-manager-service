@@ -11,6 +11,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @NamedQuery(name = "BookBE.findAll", query = "select b from Book b")
+@NamedQuery(name = "BookBE.findById", query = "select b from Book b where b.id = :id")
+@NamedQuery(name = "BookBE.findByText", query = "select b from Book b where " +
+        "lower(b.author) like '%' || lower(:text) || '%' or " +
+        "lower(b.title) like '%' || lower(:text) || '%' or " +
+        "lower(b.description) like '%' || lower(:text) || '%' or " +
+        "lower(b.genre) like '%' || lower(:text) || '%'")
 @Getter
 @Setter
 @NoArgsConstructor

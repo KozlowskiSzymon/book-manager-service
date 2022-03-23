@@ -20,4 +20,12 @@ public class BookBF {
     public List<BookBE> getAll() {
         return bookDAO.getAll();
     }
+
+    public BookBE getById(long id) {
+        return bookDAO.getById(id);
+    }
+
+    public List<BookBE> getByText(String text) {
+        return bookDAO.getByText(text);
+    }
 }
