@@ -43,5 +43,8 @@ public class BookBE {
     private boolean available;
 
     @Column
+    private String image;
+
+    @Column
     private String price;
 }
