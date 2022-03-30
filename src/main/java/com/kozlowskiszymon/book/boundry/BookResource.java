@@ -1,10 +1,8 @@
 package com.kozlowskiszymon.book.boundry;
 
 import com.kozlowskiszymon.book.control.BookBF;
-import com.kozlowskiszymon.book.model.BookBE;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 
-import javax.annotation.security.PermitAll;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
