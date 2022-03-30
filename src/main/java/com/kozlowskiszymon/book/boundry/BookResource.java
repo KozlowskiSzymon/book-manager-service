@@ -1,6 +1,8 @@
 package com.kozlowskiszymon.book.boundry;
 
 import com.kozlowskiszymon.book.control.BookBF;
+import com.kozlowskiszymon.book.model.BookBE;
+import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 
 import javax.annotation.security.PermitAll;
 import javax.enterprise.context.ApplicationScoped;
@@ -18,7 +20,6 @@ public class BookResource {
 
     @GET
     @Path("/all")
-    @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAll() {
         return Response.ok().entity(bookBF.getAll()).build();
@@ -26,15 +27,29 @@ public class BookResource {
 
     @GET
     @Path("/{id}")
-    @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     public Response getById(@PathParam("id") long id) {
         return Response.ok().entity(bookBF.getById(id)).build();
     }
 
+    @POST
+    @Path("/save")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response save(@RequestBody BookDTO book) {
+        bookBF.save(book);
+        return Response.ok().build();
+    }
+
+    @DELETE
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response delete(@PathParam("id") long id) {
+        bookBF.delete(id);
+        return Response.ok().build();
+    }
+
     @GET
     @Path("/text")
-
     @Produces(MediaType.APPLICATION_JSON)
     public Response getByText(@QueryParam("text") String text) {
         return Response.ok().entity(bookBF.getByText(text)).build();

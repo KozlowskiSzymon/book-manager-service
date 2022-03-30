@@ -33,4 +33,11 @@ public class BookDAO {
         return query.getResultList();
     }
 
+    public void save(BookBE toSave) {
+        em.persist(toSave);
+    }
+
+    public void delete(long id) {
+        em.remove(getById(id));
+    }
 }
