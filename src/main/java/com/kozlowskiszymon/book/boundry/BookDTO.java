@@ -13,7 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class BookDTO implements Serializable {
 
-    private Long id;
+    private long id;
     private String title;
     private String author;
     private String description;

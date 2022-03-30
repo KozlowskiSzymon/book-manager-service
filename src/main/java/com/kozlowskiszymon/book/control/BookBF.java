@@ -35,9 +35,8 @@ public class BookBF {
 
     @Transactional
     public void save(BookDTO book) {
-        System.out.println(book.getDescription());
         BookBE toSave;
-        if (book.getId() != null) {
+        if (book.getId() != 0) {
             toSave = bookDAO.getById(book.getId());
         } else {
             toSave = new BookBE();

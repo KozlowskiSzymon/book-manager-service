@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.NamedQuery;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @NamedQuery(name = "BookBE.findAll", query = "select b from Book b")
 @NamedQuery(name = "BookBE.findById", query = "select b from Book b where b.id = :id")
@@ -25,6 +23,7 @@ import javax.persistence.Id;
 public class BookBE {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
     @Column
