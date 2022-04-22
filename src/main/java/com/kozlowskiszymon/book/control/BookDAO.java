@@ -16,7 +16,6 @@ public class BookDAO {
 
     public List<BookBE> getAll() {
         var result = em.createNamedQuery("BookBE.findAll", BookBE.class).getResultList();
-        System.out.println(result.get(0));
         return result;
     }
 
